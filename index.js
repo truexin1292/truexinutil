@@ -3,7 +3,7 @@
  * @param timestamp 时间戳
  * @param fmt 返回时间格式
  */
-function format(timestamp, fmt = 'yyyy-MM-dd hh:mm:ss') {
+export function format(timestamp, fmt = 'yyyy-MM-dd hh:mm:ss') {
     timestamp = parseInt(timestamp);
 
     if (!timestamp || typeof (timestamp) !== 'number') {
@@ -35,7 +35,7 @@ function format(timestamp, fmt = 'yyyy-MM-dd hh:mm:ss') {
  * @desc 数组乱序
  * @param list 数组
  */
-function shuffle(list) {
+export function shuffle(list) {
     return list.sort(function () {
         return Math.random() - 0.5;
     });
@@ -47,7 +47,7 @@ function shuffle(list) {
  * @param wait 延迟执行毫秒数
  * @param type 1 表时间戳版，2 表定时器版
  */
-function throttle(func, wait, type) {
+export function throttle(func, wait, type) {
     let previous = 0,
         timeout;
 
@@ -80,7 +80,7 @@ function throttle(func, wait, type) {
 // Array.isArray(arr)
 // arr.constructor === Array
 // Object.prototype.toString.call(arr) === '[Object Array]';
-const flatten = array => array.reduce((acc, cur) => (Array.isArray(cur) ? [...acc, ...flatten(cur)] : [...acc, cur]), []);
+export const flatten = array => array.reduce((acc, cur) => (Array.isArray(cur) ? [...acc, ...flatten(cur)] : [...acc, cur]), []);
 
 export default {
     format,
